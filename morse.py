@@ -115,6 +115,7 @@ def main():
      tc1= Solution()
      ans=tc1.encrypt(str1)
      print(ans)
+pass
 
 if __name__ == '__main__':
     main()
