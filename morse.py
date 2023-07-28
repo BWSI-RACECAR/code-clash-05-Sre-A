@@ -71,7 +71,7 @@ Morse Code Key:
 
 
 Test Cases:
-Input: SOS Output: ...---...
+Input: SOS Output: ... --- ...
 
 
 Input: Hello! Output: .... . .-.. .-.. --- -.-.--
@@ -98,7 +98,7 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '4':'....-', '5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', '9':'----.',
                     '0':'-----', '.':'.-.-.-', '?':'..--..', '!':'-.-.--', 
-                    '/':'-..-.', '-':'-....-', '(':'-.--.', ')':'-.--.-'}
+                    '/':'-..-.', '-':'-....-', '(':'-.--.', ')':'-.--.-'," ":""}
 
 
 ##########################################################################
@@ -108,21 +108,7 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 
 class Solution:
     def encrypt(self, message):
-        message = message.upper()  
-        
-        encrypted_message = ""
-        for char in message:
-            if char == " ":
-                encrypted_message += "  " 
-            elif char in MORSE_CODE_DICT:
-                encrypted_message += MORSE_CODE_DICT[char] + " "  
-            else:
-                encrypted_message += char  
-          
-        return encrypted_message.strip()  
-
-            #TODO: Write code below to return a string with the solution to the prompt.
-pass
+            return "".join(MORSE_CODE_DICT[i.upper()]+" " for i in message)[:-1]
 
 def main():
      str1=input()
